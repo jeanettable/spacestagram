@@ -51,7 +51,7 @@ const SingleImgView = (props) => {
         <Box className={classes.details}>
           <CardContent className={classes.content}>
             <h3>{image.title}</h3>
-            {/* <p>{image.explanation}</p> */}
+            <p>{image.date}</p>
           </CardContent>
         </Box>
         <div className="like-interaction">

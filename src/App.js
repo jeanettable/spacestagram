@@ -1,6 +1,6 @@
 import './App.css';
 import AllTilesView from './AllTilesView';
-import { fetchImages, baseURL } from './api';
+import { fetchImages, fetchImagesByDate, baseURL } from './api';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
           <h1>Spacestagram</h1>
       </header>
       <main className="App-body-container">
-        <AllTilesView getImages={fetchImages} baseURL={baseURL} />
+        <AllTilesView getImages={fetchImages} getByDate={fetchImagesByDate} baseURL={baseURL} />
       </main>
     </div>
   );
