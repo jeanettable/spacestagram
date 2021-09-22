@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import AllTilesView from './AllTilesView';
+import { fetchImages, baseURL } from './api';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src="https://www.svgrepo.com/show/85954/planet-saturn.svg" className="App-logo" alt="logo" />
+          <h1>Spacestagram</h1>
       </header>
+      <main className="App-body-container">
+        <AllTilesView getImages={fetchImages} baseURL={baseURL} />
+      </main>
     </div>
   );
 }

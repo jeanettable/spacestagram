@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App-header {
+  font-family: 'Lobster', cursive;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,8 +18,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #a5adbd;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +39,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.like-btn-on {
+  background-color: palevioletred;
+  color: white;
+  border: solid 2px white;
+  border-radius:15%;
+}
+
+.like-btn-off {
+  background-color: cadetblue;
+  color: white;
+  border: solid 2px white;
+  border-radius:15%;
+}
+
+.list-img-card {
+  min-width: 60vh;
+  border: solid 2px slategrey;
+}
+
+.img-container > img {
+  min-height: 200px;
+  min-width: 200px;
 }
