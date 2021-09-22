@@ -1,13 +1,11 @@
 export const baseURL = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_MY_API_KEY}`;
 
 // intended to be called with baseURL:
-export async function fetchImages(url, count = 12, options) {
+export async function fetchImages(url, count = 16, options) {
     // if dates not selected, and options object not passed in:
         console.log('get images fetch hit!');
         const response = await fetch(`${url}&count=${count}`);
-        console.log('response>>>', response);
         const data = await response.json();
-        console.log('data>>>', data);
         return data;
 }
 

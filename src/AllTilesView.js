@@ -1,8 +1,21 @@
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import SingleImgView from './SingleImgView';
+import {
+    makeStyles,
+    Grid,
+} from "@material-ui/core";
+
+const useStyles = makeStyles(() => ({
+    rootCol: {
+      display: "flex",
+      flex: "1 0 auto",
+      padding: 10,
+    },
+  }));
 
 const AllTiles = (props) =>  {
+    const classes = useStyles();
     const { getImages, baseURL } = props;
     const [ images, setImages ] = useState([]);
         // for use with datepicker?
@@ -15,38 +28,19 @@ const AllTiles = (props) =>  {
         setImages(imgData);
     }, [baseURL, getImages] )
 
-    // componentDidMount() {
-    //     const imgData = getImages(baseURL);
-    //     this.setState({
-    //       images: imgData
-    //     });
-    // }
-
       return (
           <div className="images-container">
-              <div className="list-col" >
+              <Grid container className={classes.rootCol} direction="column" alignItems="center" >
               {images.length ? (
                 images.map((image, idx) => (
                     <div key={idx} className="list-img-card">
                         <SingleImgView image={image} />
-                        {/* <Link to={`/${idx}`} >
-                            <img src={image.hdurl} alt={`${image.title}: ${image.explanation}`}/>
-                        </Link> */}
-                {/* <button
-                  className="delete-button"
-                  type="button"
-                  onClick={() => this.props.deleteRobot(robot.id)}
-                >
-                  X
-                </button>  */}
               </div>
             ))  
           ) : ( 
-            //   adjust so this can be seen!!!
             <h1>Please wait, retrieving signal from Space...</h1>
           )}
-              </div>
-
+              </Grid>
           </div>
       )
 }
